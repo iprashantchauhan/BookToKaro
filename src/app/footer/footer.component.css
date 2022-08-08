@@ -1,0 +1,9 @@
+.footer{
+
+    position: fixed-bottom;
+    background-color: rgb(83, 83, 207);
+    color: white;
+}
+ul > li{
+    text-decoration: none;
+}
