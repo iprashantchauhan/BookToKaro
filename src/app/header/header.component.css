@@ -4,3 +4,28 @@
     background-color: rgb(83, 83, 207);
     color: white;
 }
+.jumbotron{
+background : url("/assets/pa.jpg") no-repeat center center fixed;    
+background-size: cover;
+height: 250px;
+
+
+}
+.container{
+    font-weight: 20px;
+   
+    text-align: center;
+}
+.lead{
+    font-size: 1.8rem;
+font-weight: 500;
+}
+.bluenavbar{
+    background-color: rgb(5, 209, 255);
+    min-height: 5px;
+}
+
+.smid{
+   padding: 0% 40% 6% 40% ;
+ 
+}
