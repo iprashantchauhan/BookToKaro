@@ -11,5 +11,10 @@ export class CreatePostComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  generateTicket(){
+    console.log(this.Ticket);
+    this.ticketService.addTicket(this.Ticket);
+    this.allTickets= this.ticketService.Tickets;
+    alert("ticket added");
+  }
 }

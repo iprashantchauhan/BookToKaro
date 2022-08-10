@@ -1,52 +1,63 @@
 <div class="container">
-    <h2 class="text-center">Create Post vanshika bajaj</h2>
-    <div class=" ">
-        <div class="form-group">
-            <label for="Title">Title</label>
-            <input class="form-control" type="text" required>
-            <label for="description1">Description1</label>
-            <input class="form-control" type="text" required>
-            <label for="description2">Description2</label>
-            <input class="form-control" type="text" required>
-            <button class="btn btn-success my-2 btn-rounded mb-4" data-toggle="modal" data-target="#modalAddTicketForm">Add Tickets</button>
-          </div>
-    </div>
-    <div class="modal fade" id="modalAddTicketForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Add ticket</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form>
-      <div class="modal-body mx-3">
+  <h2 class="text-center">Create Post</h2>
+  
+  <div class=" ">
+      <div class="form-group">
+          <label for="Title">Title</label>
+          <input class="form-control" type="text" required>
+          <label for="description1">Description1</label>
+          <input class="form-control" type="text" required>
+          <label for="description2">Description2</label>
+          <input class="form-control" type="text" required>
+          <button class="btn btn-success my-2 btn-rounded mb-4" data-toggle="modal" data-target="#modalAddTicketForm">Add Tickets</button>
+          <ul *ngFor="let c of allTickets ">
+            <li>{{c.Title}}</li>
+            <li>{{c.Description}}</li>
+            <li>{{c.Price}}</li>
+          </ul>
         
-        <div class="md-form mb-5">
+        </div>
+  </div>
+  <div class="modal fade" id="modalAddTicketForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header text-center">
+      <h4 class="modal-title w-100 font-weight-bold">Add ticket</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    
+    <form (ngSubmit)="generateTicket()">
+    <div class="modal-body mx-3">
+      
+      <div class="md-form mb-5">
+        <i class="fas fa-envelope prefix grey-text"></i>
+        <label data-error="wrong" data-success="right" for="TicketTitle">Ticket Title</label>
+        <input type="text" [(ngModel)]="Ticket.Title" name="Title"class="form-control">
+      </div>
+      <div class="md-form mb-5">
           <i class="fas fa-envelope prefix grey-text"></i>
-          <label data-error="wrong" data-success="right" for="TicketTitle">Ticket Title</label>
-          <input type="text"  class="form-control">
+          <label data-error="wrong" data-success="right" for="TicketDescription">Ticket Description</label>
+          <input type="text" [(ngModel)]="Ticket.Description" name="Description"  class="form-control">
         </div>
         <div class="md-form mb-5">
-            <i class="fas fa-envelope prefix grey-text"></i>
-            <label data-error="wrong" data-success="right" for="TicketDescription">Ticket Description</label>
-            <input type="text"  class="form-control">
-          </div>
-          <div class="md-form mb-5">
-            <i class="fas fa-envelope prefix grey-text"></i>
-            <label data-error="wrong" data-success="right" for="TicketPrice">Ticket Price</label>
-            <input type="text"  class="form-control">
-          </div>
+          <i class="fas fa-envelope prefix grey-text"></i>
+          <label data-error="wrong" data-success="right" for="TicketPrice">Ticket Price</label>
+          <input type="text" [(ngModel)]="Ticket.Price" name="Price" class="form-control">
+        </div>
 
-      </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-info" type="submit">Add Ticket</button>
-      </div>
-    </form>
     </div>
+    <div class="modal-footer d-flex justify-content-center">
+      <button class="btn btn-info" type="submit" >Add Ticket</button>
+    </div>
+    
+  </form>
+  
   </div>
+</div>
+
 </div>
 </div>
 
